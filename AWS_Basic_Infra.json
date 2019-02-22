@@ -84,7 +84,7 @@
 			"Properties": {
 				"Tags": [{
 					"Key": "Name",
-					"Value": "IGW"
+					"Value": {"Ref":"VPCNAME"}
 				},
 				{
 					"Key": "CloudFormationStack",
@@ -219,6 +219,21 @@
 				}]
 			}
 		}
+		"WebServer": {
+          "Type": "AWS::EC2::Instance",  
+          "Properties": {
+          "ImageId"            : "ami-55ef662f",
+          "InstanceType"       : "t2.nano",
+          "KeyName"            : "COKE2",
+          "NetworkInterfaces" : [{
+          "AssociatePublicIpAddress" : "true",
+          "DeviceIndex"              : "0",
+          "DeleteOnTermination"      : "true",
+          "SubnetId"                 : "subnet-d2740499",
+          "GroupSet"                 : [ "sg-61217a14" ]
+		  }]
+      }
+    }
 	},
 	"Outputs": {
 		"VPCId": {
