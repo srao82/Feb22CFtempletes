@@ -218,19 +218,19 @@
 					}
 				}]
 			}
-		}
+		},
 		"WebServer": {
           "Type": "AWS::EC2::Instance",  
           "Properties": {
-          "ImageId"            : "ami-55ef662f",
+          "ImageId"            : "ami-0080e4c5bc078760e)",
           "InstanceType"       : "t2.nano",
-          "KeyName"            : "COKE2",
+          "KeyName"            : "UbuntuKeyConvertd",
           "NetworkInterfaces" : [{
           "AssociatePublicIpAddress" : "true",
           "DeviceIndex"              : "0",
           "DeleteOnTermination"      : "true",
-          "SubnetId"                 : "subnet-d2740499",
-          "GroupSet"                 : [ "sg-61217a14" ]
+          "SubnetId"                 : {"Ref":"PublicSubnet"},
+          "GroupSet"                 : [ "sg-05f8b7585c7f07208" ]
 		  }]
       }
     }
